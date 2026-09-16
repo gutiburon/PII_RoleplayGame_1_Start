@@ -5,13 +5,13 @@ public interface ICharacter
     int DefenseValue { get; set; }
     int Health { get; set; }
 
-    IList<IOffensiveItem> OffensiveItems { get;}
-    IList<IDefensiveItem> DefensiveItems { get;}
+    IList<IItemOffensive> OffensiveItems { get;}
+    IList<IItemDefensive> DefensiveItems { get;}
     
-    void AddOffensiveItem(IOffensiveItem item);
-    void AddDefensiveItem(IDefensiveItem item);
-    void RemoveOffensiveItem(IOffensiveItem item);
-    void RemoveDefensiveItem(IDefensiveItem item);
+    void AddOffensiveItem(IItemOffensive item);
+    void AddDefensiveItem(IItemDefensive item);
+    void RemoveOffensiveItem(IItemOffensive item);
+    void RemoveDefensiveItem(IItemDefensive item);
 
 
     void RecieveAttack(int attackValue);
