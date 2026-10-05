@@ -1,25 +1,61 @@
-public class Elves
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Dynamic;
+using System.Runtime.CompilerServices;
+
+public class Elves : ICharacter
 {
-    private string name;
-    private int health;
-    private int attackValue;
+    public string Name
+    {
+        {get; set;}
+    }
+    public int Health
+    {
+        {get; set;}
+    }
+    
     public int AttackValue
     {
-        {get : return attackValue; }
+        {get; set;}
     }
-    private int DefenseValue;
-    public int defenseValue
+    public int DefenseValue
     {
-        {get : return defenseValue; }
+        {get; set;}
+    }
+    public bool IsMagic
+    {
+        {get;}
     }
 
+    public IList<IItem> Items {get; } = new List<IItem>();
 
-    public void RecibirAtaque(int damage) // Pide el valor de su método de ataque, para reducir su vida en ese entero
+    public Elves(string name, int health, int attackValue, int defenseValue, bool isMagic)
     {
-        //Reducir health en función del daño reducido
+        this.Name = name;
+        this.Health = health;
+        this.AttackValue = attackValue;
+        this.DefenseValue = defenseValue;
+        this.IsMagic = false;
     }
-    public void Curar()
+
+    public void RecieveAttack(int attackValue)
     {
-        //aumentar health
+        int damage = attackValue = this.DefenseValue;
+        if (damage > 0)
+        {
+            this.Health -= damage;
+        }
+    }
+    public void Heal()
+    {
+        this.Health += healValue;
+    }
+    public void AddItem(IItem item)
+    {
+        this.Items.Add(item);
+    }
+    public void RemoveItem(IItem item)
+    {
+        this.Items.Remove(item);
     }
 }
