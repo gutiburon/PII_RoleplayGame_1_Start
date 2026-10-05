@@ -16,3 +16,4 @@ public interface ICharacter
     void RecieveAttack(int attackValue);
     void Heal(int healValue);
 }
+    

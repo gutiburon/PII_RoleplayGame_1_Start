@@ -1,7 +1,7 @@
 using System.Dynamic;
 using System.Runtime.CompilerServices;
 
-public interface IItemOffensive
+public interface IItemOffensive : IItem
 {
     int AttackValue
     {
