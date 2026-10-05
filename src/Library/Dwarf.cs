@@ -1,30 +1,45 @@
-public class Dwarf
+using System.Collections.Generic;
+
+public class Dwarf : ICharacter
 {
-    private string name;
-    private int health;
-    private int attackValue;
-    private int defenseValue;
-    private Helmet helmet;
-    private Axe axe;
-    private Shield shield;
-     
-     public Dwarf(string name, int health, int attackValue, int defenseValue, Helmet helmet, Axe axe, Shield shield)
+    public string Name { get; set; }
+    public int AttackValue { get; set; }
+    public int DefenseValue { get; set; }
+    public int Health { get; set; }
+    public bool IsMagic { get; }
+
+    public IList<IItem> Items { get; } = new List<IItem>();
+
+    public Dwarf(string name, int attackValue, int defenseValue, int health)
     {
-        this.name = name;
-        this.health = health;
-        this.attackValue = attackValue;
-        this.defenseValue = defenseValue;
-        this.helmet = helmet;
-        this.axe = axe;
-        this.shield = shield;
+        this.Name = name;
+        this.AttackValue = attackValue;
+        this.DefenseValue = defenseValue;
+        this.Health = health;
+        this.IsMagic = false;
     }
-   
-   public void Attack(Axe axe)
+
+    public void AddItem(IItem item)
     {
-        
+        this.Items.Add(item);
     }
-    public void RecieveAttack(Helmet helmet, Shield shield, Wizard wizard, Elf elf, Dwarf dwarf)
+
+    public void RemoveItem(IItem item)
     {
-        
+        this.Items.Remove(item);
+    }
+
+    public void RecieveAttack(int attackValue)
+    {
+        int damage = attackValue - this.DefenseValue;
+        if (damage > 0)
+        {
+            this.Health -= damage;
+        }
+    }
+
+    public void Heal(int healValue)
+    {
+        this.Health += healValue;
     }
 }
