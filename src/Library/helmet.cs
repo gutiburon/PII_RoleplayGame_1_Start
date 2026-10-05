@@ -1,4 +1,4 @@
-public class Helmet : IItemDefensive
+ public class Helmet : IItemDefensive
 {
     public string Name { get; }
     public int DefenseValue { get; }

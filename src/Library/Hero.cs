@@ -21,3 +21,4 @@ public class Hero : Character
     {
         Health += amount;
     }
+}

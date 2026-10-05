@@ -14,4 +14,3 @@ public class Elves : Hero
 
     public bool IsMagic { get; private set; }
     }
-}
