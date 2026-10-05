@@ -36,7 +36,7 @@ namespace Library
         public Wizard(string name, int attackValue, int defenseValue, int health, SpellsBook spellsBook, Staff staff)
         {
             this.name = name;
-            this.attackValue = attackValue;
+            this.attackValue = attackValue;s
             this.defenseValue = defenseValue;
             this.health = health;
             this.spellsBook = spellsBook;
